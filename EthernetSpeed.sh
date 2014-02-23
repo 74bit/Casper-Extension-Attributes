@@ -4,7 +4,8 @@
 speed=$(ifconfig | grep -o "[0-9]\{1,4\}baseT")
 shortened=$(echo $speed | grep -o "[0-9]\{1,4\}")
 if [ "$shortened" == "" ]; then
-    echo "Disconnected"
+	echo "<result>Disconnected</result>"
 else
-    echo ""$shortened"Mb/s"
+	echo "<result>"$shortened"Mb/s</result>"
 fi
+exit 0
