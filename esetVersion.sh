@@ -8,4 +8,5 @@ if [[ $version =~ [0-9]+\.[0-9]+ ]]; then
 else
 	echo "<result>Not installed</result>"
 fi
+exit 0
 #ea_display_name	ESET NOD32 Version
