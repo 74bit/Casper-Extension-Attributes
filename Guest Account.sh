@@ -1,6 +1,6 @@
 #!/bin/bash
 # Displays if OS X guest accounts are enabled or disabled.
-status=`defaults read /Library/Preferences/com.apple.loginwindow.plist GuestEnabled`
+status=$(defaults read /Library/Preferences/com.apple.loginwindow.plist GuestEnabled)
 printf '<result>'
 if [ "$status" == "1" ]; then
   printf 'T'

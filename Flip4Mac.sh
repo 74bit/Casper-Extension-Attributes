@@ -3,13 +3,13 @@
 # Created by Owen Pragel on July 24rd, 2013
 appFolder='/Library/PreferencePanes/'
 app='Flip4Mac WMV.prefPane'
-NOTINSTALLED='N/A'
+NOT_INSTALLED='N/A'
 printf '<result>'
 if [ -d "$appFolder$app" ]; then
-	version=`defaults read "$appFolder$app/Contents/Info.plist" CFBundleVersion`
-	printf $version
+	version=$(defaults read "$appFolder$app/Contents/Info.plist" CFBundleVersion)
+	printf "%s" "$version"
 else
-	printf $NOTINSTALLED
+	printf "%s" "$NOT_INSTALLED"
 fi
 printf '</result>'
 #ea_display_name	Flip4Mac

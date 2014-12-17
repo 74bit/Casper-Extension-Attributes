@@ -6,10 +6,10 @@ app='join.me.app'
 NOTINSTALLED='N/A'
 printf '<result>'
 if [ -d "$appFolder$app" ]; then
-	version=`defaults read "$appFolder$app/Contents/Info.plist" CFBundleShortVersionString`
-	printf $version
+	version=$(defaults read "$appFolder$app/Contents/Info.plist" CFBundleShortVersionString)
+	printf "%s" "$version"
 else
-	printf $NOTINSTALLED
+	printf "%s" "$NOTINSTALLED"
 fi
 printf '</result>'
 #ea_display_name	join.me

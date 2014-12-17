@@ -1,6 +1,6 @@
 #!/bin/bash
-lastUser=`defaults read /Library/Preferences/com.apple.loginwindow lastUserName`
-storageUse=`du -h -d 1 /Users/$lastUser/ | grep -v "./\\." | sed -e "s|/Users/$lastUser//| |g"`
+lastUser=$(defaults read /Library/Preferences/com.apple.loginwindow lastUserName)
+storageUse=$(du -h -d 1 "/Users/$lastUser/" | grep -v "./\\." | sed -e "s|/Users/$lastUser//| |g")
 storageCheckError=$?
 if [ $storageCheckError != 0 ]; then
 	echo "Unexpected error occured!"

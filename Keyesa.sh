@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 filePaths=( '/System/Library/StartupItems/AgentMon' '/Library/StartupItems/AgentMon' )
 isPresent=0
 for i in "${filePaths[@]}"

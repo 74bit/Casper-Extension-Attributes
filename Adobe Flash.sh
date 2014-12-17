@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 ############################################################################
 #
@@ -9,19 +9,13 @@
 ############################################################################
 
 FLASHPLAYERINFO="/Library/Internet Plug-Ins/Flash Player.plugin/Contents/Info"
-
+printf '<result>'
 if [ -r "$FLASHPLAYERINFO".plist ] ; then
-
-  FlashVersion=`defaults read "$FLASHPLAYERINFO" CFBundleShortVersionString`
-  echo "<result>$FlashVersion</result>"
-
+  flashVersion=$(defaults read "$FLASHPLAYERINFO" CFBundleShortVersionString)
+  printf "%s" "$flashVersion"
 else
-
-  echo "<result>Not installed</result>"
-
+  printf "N/A"
 fi 
-
+printf '</result>'
 exit 0
-
-
 #ea_display_name	Adobe Flash

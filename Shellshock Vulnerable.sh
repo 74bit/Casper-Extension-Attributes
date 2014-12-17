@@ -1,5 +1,5 @@
 #!/bin/bash
-# Reports 'T' if shellshock-vulnerable, otherwise Fa
+# Reports 'T' if shellshock-vulnerable, otherwise F.
 bashVersion=$(bash --version | grep -o '[0-9]*\.[0-9]*\.[0-9]*')
 bashVersionWithoutDots=$(tr -dc '0-9' <<< "$bashVersion")
 printf '<result>'

@@ -1,12 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 # Checks whether Office updates are checked manually or automatically.
-lastUser=`defaults read /Library/Preferences/com.apple.loginwindow lastUserName`
-status=`defaults read "/Users/"$lastUser"/Library/Preferences/com.microsoft.autoupdate2" HowToCheck`
+lastUser=$(defaults read /Library/Preferences/com.apple.loginwindow lastUserName)
+status=$(defaults read "/Users/$lastUser/Library/Preferences/com.microsoft.autoupdate2" HowToCheck)
 printf '<result>'
-if [ "$status" == "Automatic" ]; then
-	printf "$status"
-elif [ "$status" == "Manual" ]; then
-	printf "$status"
+if [ "$status" == "Automatic" ] || [ "$status" == "Manual" ]; then
+	printf "%s" "$status"
 else
 	printf "N/A"
 fi

@@ -10,8 +10,8 @@ fi
 # running 10.7.x or higher
 
 if [[ ${osvers} -ge 7 ]]; then
-    gatekeeper_status=`spctl --status | grep "assessments" | cut -c13-`
-   if [ $gatekeeper_status = "disabled" ]; then
+    gatekeeper_status=$(spctl --status | grep "assessments" | cut -c13-)
+   if [ "$gatekeeper_status" = "disabled" ]; then
       result=Disabled
    else
       result=Active

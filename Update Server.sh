@@ -4,6 +4,4 @@
 printf "<result>"
 defaults read /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
 printf "</result>"
-
-
 #ea_display_name	Update Server

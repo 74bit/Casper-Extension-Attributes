@@ -2,8 +2,8 @@
 # Originally posted by 'bentoms' on JAMF nation
 printf '<result>'
 if [ -e /Library/Internet\ Plug-Ins/Silverlight.plugin ]; then
-	result=`defaults read /Library/Internet\ Plug-Ins/Silverlight.plugin/Contents/Info SilverlightVersion`
-	printf "$result"
+	version=$(defaults read /Library/Internet\ Plug-Ins/Silverlight.plugin/Contents/Info SilverlightVersion)
+	printf "%s" "$version"
 else
 	printf 'N/A'
 fi

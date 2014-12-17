@@ -1,3 +1,4 @@
+#!/bin/bash
 # Lists all users in the 'admin' group
 # EXCEPT for root.
 group='admin'
@@ -7,10 +8,10 @@ group='admin'
   fi
 printf '<result>'
 # Check every user
-exec dscl . -list /Users \
+dscl . -list /Users \
   | while read each_username
   do
-    printf "$each_username "
+    printf "%s" "$each_username "
     dsmemberutil checkmembership -U "$each_username" -G "$group"
   done \
     | grep "is a member" | cut -d " " -f 1 | sed '/root/d' 

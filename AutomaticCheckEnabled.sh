@@ -1,11 +1,11 @@
 #!/bin/bash
 # 
-status=`defaults read /Library/Preferences/com.apple.SoftwareUpdate.plist AutomaticCheckEnabled`
+status=$(defaults read /Library/Preferences/com.apple.SoftwareUpdate.plist AutomaticCheckEnabled)
 printf '<result>'
 if [ "$status" == "1" ]; then
-  printf 'True'
+  printf 'T'
 else
-  printf 'False'
+  printf 'F'
 fi
 printf '</result>'
 #ea_display_name    AutomaticCheckEnabled

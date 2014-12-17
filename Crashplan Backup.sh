@@ -2,7 +2,7 @@
 # Checks to see if CrashPlan backup is enabled.
 # Displays 'Active' if enabled and 'Inactive' if disabled or not installed
 # Last updated by Owen Pragel on October 29th, 2013
-status=`grep backupEnabled /Library/Logs/CrashPlan/app.log | awk '{printf $3}'`
+status=$(grep backupEnabled /Library/Logs/CrashPlan/app.log | awk '{printf $3}')
 printf '<result>'
 if [ "$status" == "true" ]; then
     printf "Active"
