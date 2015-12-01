@@ -1,15 +1,11 @@
 #!/bin/bash
-# Reports the Chrome version or not installed.
-# Created by Owen Pragel on August 2nd, 2013
-appFolder='/Applications/'
-app='Google Chrome.app'
-NOT_INSTALLED='N/A'
+APP_PATH='/Applications/Google Chrome.app'
+APP_VERSION_KEY='CFBundleShortVersionString'
 printf '<result>'
-if [ -d "$appFolder$app" ]; then
-	version=$(defaults read "$appFolder$app/Contents/Info.plist" CFBundleShortVersionString)
+if [ -d "$APP_PATH" ]; then
+	version=$(defaults read "$APP_PATH/Contents/Info.plist" "$APP_VERSION_KEY")
 	printf "%s" "$version"
 else
-	printf "%s" "$NOT_INSTALLED"
+	printf "N/A"
 fi
 printf '</result>'
-#ea_display_name	Chrome
