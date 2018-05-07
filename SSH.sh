@@ -1,15 +1,13 @@
 #!/bin/bash
 # Displays whether SSH is disabled or enabled
-sshStatus=$(sudo systemsetup -getremotelogin | grep -o 'On\|Off')
-printf '<result>'
+# assumes running
+sshStatus=$(systemsetup -getremotelogin | grep -o 'On\|Off')
 if [ "$sshStatus" == "On" ]; then
-  printf 'T'
+    eaResult='T'
 elif [ "$sshStatus" == "Off" ]; then
-  printf 'F'
+    eaResult='F'
 else
-  errorCode=$?
-  printf 'E'
-  exit $errorCode
+    eaResult='E'
 fi
-printf '</result>'
+printf '<result>%s</result>' "$eaResult"
 #ea_display_name	SSH
